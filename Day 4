@@ -1,0 +1,14 @@
+import java.util.*;
+public class Thearter{
+public static void main(String args[]){
+Scanner sc=new Scanner(System.in);
+
+long m=sc.nextInt();
+long n=sc.nextInt();
+long a=sc.nextInt();
+long r=(m+a-1)/a;
+long c=(n+a-1)/a;
+long d=r*c;
+System.out.println(d);
+}
+}
