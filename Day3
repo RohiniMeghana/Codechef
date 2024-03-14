@@ -1,0 +1,25 @@
+import java.util.*;
+ 
+public class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++){
+        String s=sc.next();
+        if(s.length()>10){
+            char c=s.charAt(0);
+            char d=s.charAt(s.length()-1);
+            int n=s.length()-2;
+            StringBuilder s1=new StringBuilder();
+            s1.append(c);
+            s1.append(n);
+            s1.append(d);
+             System.out.println(s1);
+        }
+        else{
+             System.out.println(s);
+        }
+    }
+    }
+}
+    
