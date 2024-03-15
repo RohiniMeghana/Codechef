@@ -1,0 +1,26 @@
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int d=0;
+        int e=0;
+        int f=0;
+        int a1,b1,c1;
+        int n=sc.nextInt();
+        for(int i=0;i<n;i++){
+         a1=sc.nextInt();
+         b1=sc.nextInt();
+         c1=sc.nextInt();
+         d+=a1;
+         e+=b1;
+        f+=c1;
+    }
+    if(d==0 && e==0 && f==0){
+            System.out.println("YES");
+        }
+        else{
+             System.out.println("NO");
+        }
+}
+}
