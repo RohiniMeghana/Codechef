@@ -1,0 +1,38 @@
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int s1=0;
+        int i=0,j=0;
+        int[][] a=new int[5][5];
+        for(int i1=0;i1<5;i1++){
+            for(int j1=0;j1<5;j1++){
+            a[i1][j1]=sc.nextInt();
+            if(a[i1][j1]==1){
+                i=i1;
+                j=j1;
+            }
+        }
+        }
+          
+          if(i<=2 && j>=2){
+             s1=(2-i)+(j-2);
+             System.out.println(s1);
+         } 
+         else if(i<=2 && j<=2){
+             s1=(2-i)+(2-j);
+             System.out.println(s1);
+         } 
+          else if(i>=2&& j<=2){
+             s1=i-j;
+             System.out.println(s1);
+         } 
+           else if(i>=2&& j>=2){
+             s1=(i-2)+(j-2);
+             System.out.println(s1);
+         } 
+         
+}
+}
+ 
