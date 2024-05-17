@@ -1,0 +1,26 @@
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int count=0;
+        int max=0;
+       List<Integer> li=new ArrayList<>();
+       for(int i=0;i<n;i++){
+           int val=sc.nextInt();
+           li.add(val);
+           if(li.get(i)==1){
+               count++;
+           }
+           else{
+               max=Math.max(max,count);
+               count=0;
+           }
+       }
+           
+        max=Math.max(max,count);
+
+System.out.println(max);
+}
+}
