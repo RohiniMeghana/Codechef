@@ -51,24 +51,23 @@ class HelloWorld {
        System.out.println("enter your choice:");
        int ch=sc.nextInt();
        switch(ch){
-           case 1:if(ch==1){
+           case 1:
                System.out.println("enter a number to calculate fabonacci series:");
                int n=sc.nextInt();
               fabonacci(n);
               break;
-           }
-           case 2:if(ch==2){
+           case 2:
                System.out.println("enter a number to calculate factorila:");
                int p=sc.nextInt();
                System.out.println("factorial is:"+ factorial(p));
                break;
-           }
-           case 3:if(ch==3){
+        
+           case 3:
                System.out.println("enter a number to check palindrome:");
                int m=sc.nextInt();
              palindrome(m);
              break;
-           }
+         
            default:{
                System.out.println("invalid choice");
                break;
