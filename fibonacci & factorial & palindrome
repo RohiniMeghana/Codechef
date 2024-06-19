@@ -22,22 +22,22 @@ class HelloWorld {
         }
     }
     }
-    public static int factorial(int p){
-        if(p==0 || p==1){
+    public static int factorial(int n){
+        if(n==0 || n==1){
             return 1;
         }
         else{
-            return p* factorial(p-1);
+            return n* factorial(n-1);
         }
     }
-    public static void palindrome(int m){
+    public static void palindrome(int n){
         int sum=0;
         int r=0;
-        int temp=m;
-        while(m>0){
-            r=m%10;
+        int temp=n;
+        while(n>0){
+            r=n%10;
             sum=(sum*10)+r;
-            m=m/10;
+            n=n/10;
         }
         if(sum==temp){
             System.out.println("palindrome");
@@ -50,22 +50,20 @@ class HelloWorld {
        Scanner sc=new Scanner(System.in);
        System.out.println("enter your choice:");
        int ch=sc.nextInt();
+       System.out.println("enter a number");
+         int n=sc.nextInt();
        switch(ch){
            case 1:
-               System.out.println("enter a number to calculate fabonacci series:");
-               int n=sc.nextInt();
-              fabonacci(n);
+            System.out.println("factorial is:");
+             fabonacci(n);
               break;
            case 2:
-               System.out.println("enter a number to calculate factorila:");
-               int p=sc.nextInt();
-               System.out.println("factorial is:"+ factorial(p));
+               System.out.println("factorial is:"+factorial(n));
                break;
         
            case 3:
-               System.out.println("enter a number to check palindrome:");
-               int m=sc.nextInt();
-             palindrome(m);
+             System.out.println("the number is:");
+              palindrome(n);
              break;
          
            default:{
