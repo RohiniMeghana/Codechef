@@ -23,7 +23,6 @@ class HelloWorld {
       System.out.println(m.getKey());
       for(int i=1;i<value;i++){
           System.out.println(m.getKey()+""+i);
-          value--;
       }
   }
 }
