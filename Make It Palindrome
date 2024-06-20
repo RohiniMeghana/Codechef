@@ -1,0 +1,40 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      for(int i=0;i<n;i++){
+          String s=sc.next();
+      StringBuilder sub=new StringBuilder();
+      for(int k=0;k<s.length();k++){
+          if(palindrome(s.substring(k))){
+              break;
+          }
+          
+          sub.append(s.charAt(k));
+      }
+      palindrome(s);
+      System.out.println(sub.reverse());
+      }
+      
+    }
+       public static  boolean palindrome(String s){
+             char[] b=new char[s.length()];
+              char[] a=s.toCharArray();
+              int c= a.length;
+               for(int j=0;j<a.length;j++){
+                  b[j]=a[c-1];
+                 c--;
+               }
+           if(Arrays.equals(a,b)){
+               return true;
+           }
+           else{
+              return false;
+                    }
+                }
+                
+    }
+    
+
+     
