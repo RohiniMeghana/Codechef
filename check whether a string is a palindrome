@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	String s=sc.nextLine();
+	boolean boo=true;
+char[] ch=s.toCharArray();
+char[] rev=new char[ch.length];
+int a=ch.length-1;
+for(int i=0;i<ch.length;i++){
+    rev[a]=ch[i];
+    a--;
+    
+}
+for(int j=0;j<rev.length;j++){
+if(Arrays.equals(ch,rev)){
+  boo=true;
+}
+else{
+    boo=false;
+}
+	}
+	if(boo){
+	    System.out.println("Palinderome");
+	}
+	else{
+	      System.out.println("Not a Palinderome");
+	}
+}
+}
