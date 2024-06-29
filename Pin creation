@@ -1,0 +1,39 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+    int input1=123;
+    int input2=582;
+    int input3=175;
+        String s1=String.valueOf(input1);
+          String s2=String.valueOf(input2);
+            String s3=String.valueOf(input3);
+            List<Character> c0=new ArrayList<>();
+             List<Character> c10=new ArrayList<>();
+              List<Character> c00=new ArrayList<>();
+               c0.add(s1.charAt(2));
+               c0.add(s2.charAt(2));
+               c0.add(s3.charAt(2));
+               c10.add(s1.charAt(1));
+               c10.add(s2.charAt(1));
+               c10.add(s3.charAt(1));
+               c00.add(s1.charAt(0));
+               c00.add(s2.charAt(0));
+               c00.add(s3.charAt(0));
+               int a=Integer.parseInt(String.valueOf(Collections.min(c0)));
+               c0.addAll(c10);
+               c0.addAll(c00);
+             int b=Integer.parseInt(String.valueOf(Collections.min(c10)));
+           int c=Integer.parseInt(String.valueOf(Collections.min(c00)));
+            int d=Integer.parseInt(String.valueOf(Collections.max(c0)));
+            String c1= String.valueOf(d) + String.valueOf(c)+String.valueOf(b) + String.valueOf(a);
+            a=Integer.parseInt(c1);
+             System.out.println(a);
+             
+
+    }
+        
+	}
+
+    
