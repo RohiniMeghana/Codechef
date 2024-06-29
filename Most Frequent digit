@@ -1,0 +1,59 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+    int input1=123;
+    int input2=456;
+    int input3=345;
+    int input4=5043;
+        String s1=String.valueOf(input1);
+      String s2=String.valueOf(input2);
+      String s3=String.valueOf(input3);
+      String s4=String.valueOf(input4);
+      StringBuilder sb=new StringBuilder();
+      sb.append(s1);
+        sb.append(s2);
+         sb.append(s3);
+          sb.append(s4);
+          s4=sb.toString();
+        char[] ch=s4.toCharArray();
+        int k=0;
+        int v=0;
+        int m=0;
+        Map<Character,Integer> map=new HashMap<Character,Integer>();
+        List<Integer> lv=new ArrayList<>();
+         List<Character> lk=new ArrayList<>();
+         List<Character> l1=new ArrayList<>();
+        for(int i=0;i<ch.length;i++){
+            if(map.containsKey(ch[i])){
+                int c=map.get(ch[i]);
+                map.put(ch[i], c+1);
+            }
+            else{
+                map.put(ch[i],1);
+            }
+        }
+        Set<Map.Entry<Character,Integer>> entryset=map.entrySet();
+        for(Map.Entry<Character,Integer> entry:entryset){
+          lv.add(entry.getValue());
+         lk.add(entry.getKey());
+        
+            }
+           int b=Collections.max(lv);
+            for(int n=0;n<lv.size();n++){
+                if(lv.get(n)==b){
+                    l1.add(lk.get(n));
+                }
+            }
+            char cc=Collections.max(l1);
+            int max=Integer.parseInt(String.valueOf(cc));
+        
+             System.out.println(max);
+        }
+
+       
+        
+	}
+
+    
