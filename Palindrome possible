@@ -1,0 +1,31 @@
+import java.util.*;
+public class Checkpal{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int input1=sc.nextInt();
+        System.out.println(isPalindrome(input1));
+    }
+
+public static int isPalindrome(int input1){
+String s=String.valueOf(input1);
+       Map<Character,Integer> map=new HashMap<Character,Integer>();
+       for(char digit:s.toCharArray()){
+         if(map.containsKey(digit)){
+             map.put(digit,map.get(digit)+1);
+         }
+         else{
+             map.put(digit,1);
+         }
+
+       }
+       int oc=0;
+       for(int count :map.values()){
+           if(count%2!=0){
+               oc++;
+           }
+       }
+        return (oc<=1)?2:1;
+
+        }
+}
+	
