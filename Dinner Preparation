@@ -1,3 +1,33 @@
+Shyam and Ram are fighting over who makes the dinner, both of them are very lazy so they don't want to make it.
+Shyam has a patience level of A, meaning he will only be convinced on the Ath time when Ram asks him to make the dinner.
+Ram, on the other hand, has decided to convince Shyam at most B times. If Shyam is not convinced by the Bth time, Ram will proceed to make it himself.
+Given the values of A and B, find out who will end up making the dinner.
+
+Input
+The first line of the input contains a single integer T, denoting the number of test-cases.
+Each line of the test-case contains two space separated integers A and B.
+
+Constraints
+1 ≤ T ≤ 1000
+1 ≤ A, B ≤ 100
+Output
+For each test case, output on a new line, Ram or Shyam corresponding to who ends up making the dinner.
+Example
+Sample Input
+1
+4 3
+Sample Output
+Ram
+Explanation
+Ram will convince Shyam for at most 3 times. However, Shyam has decided to agree on the 4th time. Thus, Ram makes the dinner.
+
+
+
+
+
+//program
+
+
 import java.io.*; // for handling input/output
 import java.util.*; // contains Collections framework
 
