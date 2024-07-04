@@ -1,0 +1,58 @@
+Ram and Shyam play the following game. Ram eats 1 candy, then Shyam eats 2 candies, then Ram eats 3 candies, then Shyam eats 4 candies, and so on. Once someone can't eat what he is supposed to eat, he loses.Ram can eat at most A candies in total while Shyam can eat at most B candies in total. Who will win the game? Print "Ram" or "Shyam" accordingly.
+
+Input
+The only line of input contains two integers A and B denoting the maximum possible number of candies Ram can eat and the maximum possible number of candies Shyam can eat respectively.
+
+Constraints:
+1 ≤ A, B ≤ 1000
+Output
+Return "Ram" if Ram wins otherwise print "Shyam".
+Example
+Sample Input:
+3 2
+Sample Output:
+Shyam
+Explanation
+We have A = 3 and B = 2. Ram eats 1 candy first, and then Shyam eats 2 candies. Then Ram is supposed to eat 3 candies but that would mean 1 + 3 = 4 candies in total. It's impossible because he can eat at most A candies, so he loses. Shyam wins, and so we print "Shyam".
+
+
+//program
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int i=1;
+        int s=0;
+        int r=0;
+        while(i>0){
+            if(i%2!=0){
+                r=r+i;
+                if(r>a){
+            System.out.println("Shyam");
+            break;
+        }
+               
+            }
+            else{
+                s=s+i;
+                if(s>b){
+            System.out.println("Ram");
+            break;
+        }
+
+            }
+            i++;
+        
+        }
+         
+    
+        // Your code here
+    }
+}
