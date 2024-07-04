@@ -29,30 +29,28 @@ class Main {
         int a=sc.nextInt();
         int b=sc.nextInt();
         int i=1;
-        int s=0;
-        int r=0;
+        String res="";
         while(i>0){
-            if(i%2!=0){
-                r=r+i;
-                if(r>a){
-            System.out.println("Shyam");
-            break;
-        }
-               
+            if(i%2==0){
+                if(b>=i){
+                    b=b-i;
+                }
+                else{
+                    res="Ram";
+                    break;
+                }
             }
             else{
-                s=s+i;
-                if(s>b){
-            System.out.println("Ram");
-            break;
-        }
-
+                if(a>=i){
+                    a=a-i;
+                }
+                else{
+                    res="Shyam";
+                    break;
+                }
             }
             i++;
-        
-        }
-         
-    
-        // Your code here
     }
+    System.out.println(res);
+}
 }
