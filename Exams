@@ -1,0 +1,50 @@
+Exams
+Time Limit: 2, Memory Limit: 256000
+In a City, there are X schools, and each school has Y students.In the end of a year total of Z students passed the exams. Assuming that all students appeared for the exams, find whether the number of students who passed in City was strictly greater than 50%.
+
+Input
+The only line of input contains three space separated integers X, Y and Z denoting the number of schools, number of students and number of students passed the exams respectively.
+
+Constraints
+1 ≤ X ≤ 5
+1 ≤ Y ≤ 50
+0 ≤ Z ≤ X*Y
+Output
+Return "Yes" if the total number of students who passed in a city was strictly greater than 50%, otherwise return "No".
+Example
+Sample Input:
+2 10 12
+Sample Output:
+Yes
+Explanation
+The total number of students appeared were 2*10=20. The number of students passed were
+12. Thus, number of students who passed are 60%, which is strictly greater than 50%.
+Generated Expected Output
+
+
+
+
+//program
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int a=sc.nextInt();
+       int b=sc.nextInt();
+       int c=sc.nextInt();
+       int d=a*b;
+      float e=(float)c/d;
+      e=e*100;
+       if(e>50){
+           System.out.println("Yes");
+       }
+       else{
+           System.out.println("No");
+       }
+    }
+}
