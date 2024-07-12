@@ -1,0 +1,67 @@
+Given a string S consisting of only lowercase and uppercase English letters and spaces, your task is to convert it into title case. In title case, the first letter of each word is capitalized while the rest are in lowercase, except for words that are entirely in uppercase (considered as acronyms), which should remain unchanged.
+
+Note:-
+->Words are defined as contiguous sequences of English letters separated by spaces.
+->Acronyms are words that are entirely in uppercase and should remain unchanged.
+->Assume the input does not contain leading, trailing, or multiple spaces between words.
+Input
+The only line contains an string S.
+
+Constraints
+1 ≤ S ≤ 1000
+Output
+Return the string S converted into title case.
+Example
+Sample Input
+this is a NEWTON problem
+Sample Output
+This Is A NEWTON Problem
+Explanation
+"NEWTON" is an acronym and remains in uppercase. Other words are capitalized as they are not acronyms.
+
+
+
+//program
+import java.io.*;
+import java.util.*;
+
+class Main {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        StringTokenizer str = new StringTokenizer(s);
+        StringBuilder result = new StringBuilder();
+        
+        while(str.hasMoreTokens()) {
+            String word = str.nextToken();
+            if (isAcronym(word)) {
+                result.append(word);
+            } else {
+                result.append(adjustCapitalization(word));
+            }
+            result.append(" ");
+        }
+        
+        System.out.println(result.toString().trim());
+        sc.close();
+    }
+    
+    private static boolean isAcronym(String word) {
+        return word.equals(word.toUpperCase());
+    }
+    
+    private static String adjustCapitalization(String word) {
+        if (word.length() <= 1) return word.toUpperCase();
+        
+        char[] chars = word.toCharArray();
+        chars[0] = Character.toUpperCase(chars[0]);
+        
+        for (int i = 1; i < chars.length - 1; i++) {
+            if (Character.isLowerCase(chars[i+1])) {
+                chars[i] = Character.toLowerCase(chars[i]);
+            }
+        }
+        
+        return new String(chars);
+    }
+}
