@@ -1,0 +1,50 @@
+Passing Marks
+Time Limit: 2, Memory Limit: 256000
+In a class of N students, a class test was held. The ith student scored Ai​ marks. It is also known that the scores of all students were distinct. A student passes the test if their score is strictly greater than the passing mark. Given that exactly X students pass in the test, find the maximum value of the passing mark of the test.
+
+Input
+The first line contains 2 space separated integers N and X denoting the number of students in the class and the number of students that passed in the test.
+The following line contains N space separated integers A1,  A2,......., An denoting the marks of the ith student.
+Output
+Return the maximum value of the passing mark of the test.
+Example
+Sample Input
+2 2
+5 1
+Sample Output
+0
+Explanation
+Since both students pass the test, both students scored greater than passing marks. The maximum value of passing marks can be 0, as both students have marks greater than 0.
+
+
+//program
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       int x=sc.nextInt();
+       int[] a=new int[n];
+       int b=0;
+       for(int i=0;i<n;i++){
+           a[i]=sc.nextInt();
+       }
+       Arrays.sort(a);
+       for(int i=0;i<n;i++)
+       {
+       if(n>=x){
+          int c=n-x;
+          b=a[c]-1;
+       }
+       else{
+           b=-1;
+           
+       }
+       }
+       System.out.println(b);
+    }
+}
