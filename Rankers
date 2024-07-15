@@ -1,0 +1,77 @@
+Rankers
+Time Limit: 2, Memory Limit: 256000
+Two friends, Ram and Shyam, are writing a computer science examination series. There are three subjects in this series: DSA, TOC, and DM. Each subject carries 100 marks.You know the individual scores of both Ram and Shyam in all 3 subjects. You have to determine who got a better rank.
+
+The rank is decided as follows:
+->The person with a bigger total score gets a better rank
+->If the total scores are tied, the person who scored higher in DSA gets a better rank
+->If the total score and the DSA score are tied, the person who scored higher in TOC gets a better rank
+->If everything is tied, they get the same rank.
+
+Input
+The first line contains three space-separated integers denoting the scores of Ram in DSA, TOC and DM respectively.
+The second line contains three space-separated integers denoting the scores of Shyam in DSA,  TOC and DM respectively.
+
+Constraints:
+Each score of both Ram and Shyam lies between 0 and 100.
+Output
+Return "Ram" if Ram got a better rank else return "Shyam" if Shyam got a better rank . If there was a tie then output "Tie".
+Example
+Sample Input:
+10 20 30
+30 20 10
+Sample Output:
+Shyam
+Explanation
+For the first test case, Ram and Shyam have the same total score but Shyam gets a better rank because he has a higher score in DSA.
+
+
+
+
+//program
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int dr=sc.nextInt();
+        int tr=sc.nextInt();
+        int dmr=sc.nextInt();
+        int s1=dr+tr+dmr;
+        int ds=sc.nextInt();
+        int ts=sc.nextInt();
+        int dms=sc.nextInt();
+        int s2=ds+ts+dms;
+        if(s1>s2){
+            System.out.println("Ram");
+        }
+        else if(s1<s2){
+             System.out.println("Shyam");
+        }
+        else{
+            if(dr>ds){
+                 System.out.println("Ram");
+            }
+            else if(dr<ds){
+                  System.out.println("Shyam");
+            }
+            else{
+                if(tr>ts){
+                 System.out.println("Ram");
+            }
+            else if(tr<ts){
+                  System.out.println("Shyam");
+            }
+            else{
+                System.out.println("Tie");
+            }
+            }
+        }
+
+
+    }
+}
