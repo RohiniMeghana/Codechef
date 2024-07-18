@@ -1,0 +1,58 @@
+Min to Max
+Time Limit: 2, Memory Limit: 256000
+You are given an array A of size N. Let M be the minimum value present in the array initially.
+In one operation, you can choose an element Ai (1 <= i <= N) and an integer X ( 1 <= X <= 100), and set  Ai = X.
+Determine the minimum number of operations required to make M the maximum value in the array A.
+Input
+The first line contains an integer N denoting the size of an array.
+The next line contains N space separated integers A1, A2, ........., An denoting the elements of the array.
+
+Constraints
+1 ≤ N ≤ 100
+1 ≤ Ai ≤ 100
+Output
+Return the minimum number of operations required to make M the maximum value in the array A.
+Example
+Sample Input
+2
+1 2
+Sample Output
+1
+Explanation
+The minimum value in the array, M, is initially 1. We can use one operation as following:
+Choose A2 and set it as X = 1. Thus the final array becomes [1,1].
+Since all elements of the final array are 1, the maximum value of the array is now 1. It can be shown that this is the minimum number of operations required to do so.
+
+
+
+//program
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int c=0;
+        List<Integer> li=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            int v=sc.nextInt();
+            li.add(v);
+        }
+        int x=Collections.min(li);
+        for(int i=0;i<n;i++){
+            if(li.get(i)!=x){
+               int a=li.get(i);
+               a=x;
+                c++;
+            }
+            else{
+                continue;
+            }
+        }
+        System.out.print(c);
+    }
+}
