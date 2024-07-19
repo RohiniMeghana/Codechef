@@ -70,10 +70,10 @@ class HelloWorld {
             }
             if(s.charAt(i)=='C'){
                 if(s.charAt(i-1)==s.charAt(i+1)){
-                    s1+="1";
+                    s1+="0";
                 }
                 else{
-                    s1+="0";
+                    s1+="1";
                 }
             }
         }
