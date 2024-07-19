@@ -1,0 +1,65 @@
+Chess Champions
+Time Limit: 2, Memory Limit: 256000
+Nachev and Carlsen are playing in the championship having 14 games between them, where each game has one of three outcomes — it can be won by Carlsen, won by Nachev, or it can be a draw. The winner of a game gets 2 points, and the loser gets 0 points. If it’s a draw, both players get 1 point each.
+The total prize pool of the championship is 100⋅X. At end of the 14 Classical games, if one player has strictly more points than the other, he is declared the champion and gets 60⋅X as his prize money, and the loser gets 40⋅X. If the total points are tied, then the defending champion Carlsen is declared the winner. However, if this happens, the winner gets only 55⋅X, and the loser gets 45⋅X.
+Input
+The first line of an integer X, denoting that the total prize pool is 100⋅X.
+The second line contains the results of the match, as a string of length 14 containing only the characters C, N, and D where C denotes Carlsen wins , N denotes Nachev Wins, and D denotes the draw.
+
+Constraints
+1 ≤ X ≤ 106
+string.length = 14
+string contains only characters C, N, D.
+Output
+Return the total prize money won by Carlsen.
+Example
+Sample Input
+100
+CCCCCCCCCCCCCC
+Sample Output
+6000
+Explanation
+Since Carlsen won all the games, he will be crowned the champion and will get 60⋅X as the prize money which is 60⋅100 = 6000
+
+
+
+//program
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String s=sc.next();
+        char[] ch=s.toCharArray();
+        int car=0;
+        int nac=0;
+        for(int i=0;i<ch.length;i++){
+            if(ch[i]=='C'){
+                car=car+2;
+            }
+          else  if(ch[i]=='N'){
+                nac=nac+2;
+            }
+            else if(ch[i]=='D'){
+                car=car+1;
+                nac=nac+1;
+            }
+           
+        }
+        if(car>nac){
+            System.out.println(60*n);
+        }
+        else if(car<nac){
+            System.out.println(40*n);
+        }
+        else{
+             System.out.println(55*n);
+        }
+       
+    }
+}
