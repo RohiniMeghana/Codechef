@@ -33,7 +33,6 @@ class Solution
     {
         int s1=0;
         int s2=0;
-        List<Integer> l=new ArrayList<>();
         for(int i=1;i<=m;i++){
             int a=n*i;
             s2+=i;
