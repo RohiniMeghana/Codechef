@@ -2,19 +2,14 @@ Input1:fruits Input2:are good Output:utsroigfedo
 Explanation: concatenate both the strings, remove duplicate alphabets and white spaces, arrange the alphabets in descending order.
 
 
-//program
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
 import java.util.*;
 class HelloWorld {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         String s1=sc.nextLine();
-        String[] str1=s1.split(" ");
+        s1.replace(" ","");
         String s2=sc.nextLine();
-        String[] str2=s2.split(" ");
-       s1=String.join("",str1);
-       s2=String.join("",str2);
+         s2.replace(" ","");
        s1+=s2;
       Set<Character> set=new HashSet<>();
       for(int i=0;i<s1.length();i++){
