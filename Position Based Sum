@@ -1,0 +1,27 @@
+Input1:5 Input2:{1,51,436,7860,41236}
+Output:107
+Explanation: find the square of each number present in the array generated {1,25,16,49,16} =107
+
+//program
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] a=new int[n];
+        int s=0;
+        List<Integer> li=new ArrayList<>();
+        int x=1;
+        for(int j=0;j<n;j++){
+            a[j]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            int q=a[i]/x;
+      s+=(q*q);
+            x=x*10;
+           
+        }
+     System.out.println(s);
+    }
+}
