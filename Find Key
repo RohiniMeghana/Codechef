@@ -1,0 +1,27 @@
+Find Key
+Input1:3521 Input2:2452 Input3:1352 Output:7
+Explanation: key=(Thousands digit of input1*hundreds digit of input2)- largest digit of input3
+//program
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+       int n1=sc.nextInt();
+        int n2=sc.nextInt();
+       int n3=sc.nextInt();
+       int x=1000;
+       List<Integer> l=new ArrayList<>();
+         n1=n1/1000;
+        n2=n2%1000;
+        n2=n2/100;
+        for(int i=0;i<4;i++){
+           int a=n3/x;
+           l.add(a);
+           n3=n3%x;
+           x=x/10;
+      
+       }
+        n3=Collections.max(l);
+        System.out.println((n1*n2)-n3);
+    }
+}
