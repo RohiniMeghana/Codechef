@@ -1,0 +1,42 @@
+The String Decorder Input1:101101110
+Output:ABC Explanation: A:1
+B:11 C:111 D:1111
+
+E:11111 F:111111 G:1111111
+And son on upto Z having 26 1’s (11111111111111111111111111)
+The sequence of 1’s in the the encoded form are seperated by a single 0 which helps to distinguish between 2 letters.
+
+//program
+import java.util.*;
+public class StringDecoder{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       String s=sc.nextLine();
+       char[] ch={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+       String[] str=s.split("0");
+       int s1=0;
+       String str1="";
+       for(int i=0;i<str.length;i++){
+              if(str[i].length()==1){
+                 
+                  str1+='A';
+              }
+              else{
+                  Long a=Long.parseLong(str[i]);
+                  while(a>0){
+                      Long r=a%10;
+                        s1+=r;
+                      a=a/10;
+                  }
+                
+                   str1+=ch[s1-1];
+                   s1=0;
+              }
+          }
+          
+          System.out.println(str1);
+
+          }
+          
+       }
+
