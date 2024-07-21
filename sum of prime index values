@@ -1,4 +1,4 @@
-7.	Calculate the sum of prime index values in an array Input1:{10,20,30,40,50,60,70,80,90,100}
+Calculate the sum of prime index values in an array Input1:{10,20,30,40,50,60,70,80,90,100}
 Input2:10 Output:210
 Explanation: find the sum of the values that are present in prime index.
 
