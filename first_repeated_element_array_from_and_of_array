@@ -1,0 +1,75 @@
+Find the first repeated element in the array from the end of the array
+Input1:{1,2,4,1,2,8}
+Input2:6 Output:2
+//program
+import java.util.*;
+public class StringDecoder{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] a=new int[n];
+        Map<Integer,Integer> map=new HashMap<>();
+        List<Integer> key=new ArrayList<>();
+          List<Integer> value=new ArrayList<>();
+           List<Integer> vrep=new ArrayList<>();
+            List<Integer> fans=new ArrayList<>();
+            int neg=0;
+            int pos=0;
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+            if(map.containsKey(a[i])){
+                int c=map.get(a[i]);
+                map.put(a[i],c+1);
+            }
+            else{
+                map.put(a[i],1);
+            }
+            if(a[i]<=0){
+                neg++;
+            }
+            else{
+                pos++;
+            }
+        }
+        int c=0;
+        Set<Map.Entry<Integer,Integer>> entrySet=map.entrySet();
+        for(Map.Entry<Integer,Integer> entry:entrySet){
+            key.add(entry.getKey());
+            value.add(entry.getValue());
+        }
+       int a1=Collections.max(value);
+       for(int i=0;i<key.size();i++){
+           if(value.get(i)==a1){
+             vrep.add(key.get(i));
+           }
+           if(value.get(i)>1){
+               c++;
+           }
+       }
+       for(int i=a.length-1;i>=0;i--){
+           for(int j=0;j<vrep.size();j++){
+           if(a[i]==vrep.get(j)){
+               if(a[i]>0){
+               fans.add(a[i]);
+               j++;
+           }
+           }
+       }
+       }
+       if(neg>pos){
+           System.out.println("0");
+       }
+     else{
+       if(c>0){
+           System.out.println(fans.get(0));
+       }
+       else{
+           System.out.println(a[a.length-1]);
+       }
+     }
+}
+      
+          }
+           
+       
+
