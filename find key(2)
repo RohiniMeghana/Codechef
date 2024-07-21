@@ -1,0 +1,43 @@
+find key Input1:3521 Input2:2452 Input3:1352 
+Output:19
+
+Explanation: sum of largest digits of all the 3 numbers-sum of smallest 
+
+//program
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+       int n3=sc.nextInt();
+        int x=1000;
+        int y=1000;
+        int z=1000;
+        List<Integer> l1=new ArrayList<>();
+        List<Integer> l2=new ArrayList<>();
+        List<Integer> l3=new ArrayList<>();
+      for(int i=0;i<4;i++){
+          int a=n1/x;
+          l1.add(a);
+          n1=n1%x;
+          x=x/10;
+      }
+       for(int i=0;i<4;i++){
+          int a=n2/y;
+          l2.add(a);
+          n2=n2%y;
+          y=y/10;
+      }
+       for(int i=0;i<4;i++){
+           
+          int a=n3/z;
+          l3.add(a);
+          n3=n3%z;
+          z=z/10;
+      }
+     int s1=Collections.min(l1)+Collections.min(l2)+Collections.min(l3);
+     int s2=Collections.max(l1)+Collections.max(l2)+Collections.max(l3);
+     System.out.println(s2+s1);
+    }
+}
