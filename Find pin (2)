@@ -1,0 +1,55 @@
+Find pin Input1:3521 Input2:2452 Input3:1352 Input4:38 
+Output:1 
+Explanation:
+If input4 is even :sum of even index digits of input1,input2,input3 -sum of odd index digits of input1,input2,input3
+If input4 is odd :sum of odd index digits of input1,input2,input3 -sum of even index digits of input1,input2,input3
+//program
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n1=sc.nextInt();
+        int n2=sc.nextInt();
+       int n3=sc.nextInt();
+        int n4=sc.nextInt();
+        int se=0;
+        int so=0;
+        int x=1000;
+        int y=1000;
+        int z=1000;
+        List<Integer> l=new ArrayList<>();
+      for(int i=0;i<4;i++){
+          int a=n1/x;
+          l.add(a);
+          n1=n1%x;
+          x=x/10;
+      }
+       for(int i=0;i<4;i++){
+          int a=n2/y;
+          l.add(a);
+          n2=n2%y;
+          y=y/10;
+      }
+       for(int i=0;i<4;i++){
+           
+          int a=n3/z;
+          l.add(a);
+          n3=n3%z;
+          z=z/10;
+      }
+      for(int i=0;i<l.size();i++){
+          if(i%2==0){
+              se+=l.get(i);
+          }
+          else{
+              so+=l.get(i);
+          }
+      }
+       if(n4%2==0){
+           System.out.println(se-so);
+       }
+       else{
+           System.out.println(so-se);
+       }
+    }
+}
