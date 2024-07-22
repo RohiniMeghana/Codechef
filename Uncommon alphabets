@@ -1,0 +1,68 @@
+input1: A B C
+input2: B C
+output: (add common characters ascii value )common charactersis A-ascii -65->6+5=11->1+1=2(unil we get single digit)
+
+
+
+//program
+
+import java.util.*;
+class HelloWorld {
+    public static int Upper(char[] input1,char[] input2){
+        Set<Character> set1=new HashSet<>();
+         Set<Character> set2=new HashSet<>();
+        for(char c:input1){
+            set1.add(c);
+        }
+       
+        for(char c:input2){
+            if(set1.add(c)){
+                continue;
+            }
+             else{
+                 set1.remove(c);
+             }
+        }
+        int s=0;
+       
+       
+        for(char b:set1){
+            s+=(int)b;
+        }
+      
+      while(s>9){
+           s=find(s);
+          }
+          return s;
+    }
+
+          public static int find(int s){
+               int s1=0;
+      while(s!=0){
+              int a=s%10;;
+             s1+=a;
+             s=s/10;
+  }
+  return s1; 
+    }
+    
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n1 = sc.nextInt();
+        char[] input1 = new char[n1];
+        for (int i = 0; i < n1; i++) {
+            input1[i] = sc.next().charAt(0);
+        }
+        
+        int n2 = sc.nextInt();
+        char[] input2 = new char[n2];
+        for (int i = 0; i < n2; i++) {
+            input2[i] = sc.next().charAt(0);
+        }
+        
+        int result = Upper(input1, input2);
+        System.out.println(result);
+    }
+}
