@@ -1,0 +1,59 @@
+Median for free
+Time Limit: 2, Memory Limit: 256000
+If the chef buys a certain number of items, the item with the median price among those items is free. 
+The chef buys a certain number of items with prices A1, A2, A3, ..., An. How much does the chef need to pay?
+Note: The median of a list of numbers is the middle number when the list is sorted. If the list has an even number of items, the median is the lower of the two middle numbers.
+
+Input
+An integer n representing the number of items.
+A list of n integers representing the prices of the items.
+
+Constraints:
+1 <= n <= 10000
+0 <= items[i] <= 100000
+Output
+An integer representing the total amount of money the chef needs to pay.
+Example
+Input:
+6
+6 2 4 8 3 7
+Output:
+26
+Explanation:
+if the chef buys 6 items priced at 6, 2, 4, 8, 3, and 7, the sorted prices are 2, 3, 4, 6, 7, and 8. The two middle prices are 4 and 6, so the median is 4. The item priced at 4 will be free, and the chef only needs to pay for the other five items.
+
+
+
+
+//program
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int s=0;
+        int a=0;
+        List<Integer> l=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            l.add(sc.nextInt());
+        }
+        Collections.sort(l);
+        for(int j=0;j<n;j++){
+            s+=l.get(j);
+            if(n%2!=0){
+                a=n/2;
+                a=l.get(a-1);
+            }
+            else{
+                 a=(n/2)-1;
+                a=l.get(a);
+            }
+        }
+        System.out.println(s-a);
+    }
+}
