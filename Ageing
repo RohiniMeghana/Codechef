@@ -1,0 +1,47 @@
+Ageing
+Time Limit: 2, Memory Limit: 256000
+Naina's current age is 20 years, while Yash's current age is 10 years.
+Determine Yash's age when Naina will be X years old.
+Note: Assume that Naina and Yash were born on same day and same month (just different year).
+
+Input
+The first line of input will contain a single integer T, denoting the number of test cases.
+Each test case consists of a single integer X, the age of Naina.
+
+Constraints
+1 ≤ T ≤ 25
+25 ≤ X ≤ 50
+Output
+For each test case, output Yash's age when Naina will be X years old.
+Example
+Sample Input
+2
+25
+36
+Sample Output
+15
+26
+Explanation
+Test case 1: Yash is 10 years old when Naina is 20 years old. Thus, when Naina would be 25, Yash would be 15.
+Test case 2: Yash is 10 years old when Naina is 20 years old. Thus, when Naina would be 36, Yash would be 26.
+
+
+
+//program
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++){
+            int a=sc.nextInt();
+            int b=a-10;
+            System.out.println(b);
+        }
+    }
+}
