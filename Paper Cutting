@@ -1,0 +1,54 @@
+Paper Cutting
+Time Limit: 2, Memory Limit: 256000
+Neha has a square-shaped chart paper with the side length equal to N. She wants to cut out K x K squares from this chart paper. Find the maximum number of K x K squares she can cut from the entire chart paper.
+Note that, some part of the chart paper might not be a included in any K x K cutout square.
+
+Input
+The first line contains a single integer T - the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two space-separated integers N and K - the side length of the entire chart paper and the side length of the cutout squares.
+
+Constraints
+1 ≤ T ≤ 1000
+1 ≤ K ≤ N ≤ 1000
+Output
+For each test case, output on a new line the maximum number of K x K squares Neha can cut from the entire chart paper.
+Example
+Sample Input
+2
+5 1
+2 2
+Sample Output
+25
+1
+Explanation
+Test case 1: Neha can cut out 25 squares of size 1 x 1 from the entire 5 x 5 chart paper.
+Test case 2: Neha can cut out 1 square of size 2 x 2 from the entire 2 x 2 chart paper.
+
+
+
+//program
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+        // Your code here
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++){
+            int n=sc.nextInt();
+            int k=sc.nextInt();
+            if(n<k){
+                System.out.println("0");
+            }
+            else if(n==k){
+                System.out.println("1");
+            }
+            else{
+                System.out.println((n/k)*(n/k));
+            }
+        }
+    }
+}
