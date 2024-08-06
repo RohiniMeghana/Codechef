@@ -1,0 +1,40 @@
+import java.util.*;
+public class Unique{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int count=0;
+        for(int i=a;i<=b;i++){
+            String s=String.valueOf(i);
+            char[] ch=s.toCharArray();
+              boolean bo=true;
+              Map<Character,Integer> m=new HashMap<Character,Integer>();
+            for(int j=0;j<ch.length;j++){
+                if(m.containsKey(ch[j])){
+                    bo=false;
+                    break;
+                }
+                else{
+                    m.put(ch[j],1);
+                }
+            
+        }
+       if(bo){
+           count++;
+       }
+
+        }
+       
+        System.out.println(count);
+      
+        
+    }
+}
+
+
+//output
+input:
+10
+15
+output:5  because 10 11 12 13 14 15 (range from 10 to 15 except 11 all have unique numbers)
