@@ -1,0 +1,27 @@
+import java.util.*;
+class HelloWorld {
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+       long a=0;
+       long b=1;
+       long c=0;
+       if(n==0){
+           System.out.print(a);
+       }
+       else if(n==1){
+            System.out.print(b);
+       }
+       else{
+          int i=2;
+       while(i<=n){
+           c=a+b;
+           a=b;
+           b=c;
+           i++;
+       }
+       System.out.print(c);
+       }  
+}
+}
