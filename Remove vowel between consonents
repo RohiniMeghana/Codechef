@@ -1,0 +1,23 @@
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        String sb="";
+       List<Character> l=new ArrayList<>(Arrays.asList('a','e','i','o','u'));
+        sb+=s.charAt(0);
+        for(int i=1;i<s.length()-1;i++){
+            char a=s.charAt(i);
+            char b=s.charAt(i-1);
+            char c=s.charAt(i+1);
+            if(!l.contains(s.charAt(i-1)) && l.contains(s.charAt(i))&& !l.contains(s.charAt(i+1))){
+                continue;
+        }
+        else{
+            sb+=a;
+        }
+    }
+sb+=s.charAt(s.length()-1);
+    System.out.println(sb);
+}
+}
