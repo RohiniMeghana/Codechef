@@ -1,0 +1,80 @@
+class Linkedlist{
+    private class Node{
+        int data;
+        Node next;
+        public Node(int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+    Node head=null;
+    Node tail=null;
+    int size=0;
+    
+    public void beg(int data){
+        Node temp=new Node( data);
+        if(head==null){
+            head=tail=temp;
+        }
+        else{
+            temp.next=head;
+            head=temp;
+        }
+        size++;
+    }
+    public void end(int data){
+        Node temp=new Node( data);
+        if(head==null){
+            head=tail=temp;
+        }
+        else{
+            tail.next=temp;
+            tail=temp;
+        }
+        size++;
+    }
+    public void anypos(int data,int pos){
+         if(pos<1 || pos>size+1){
+             System.out.println("Invalid");
+             return;
+         }
+         Node temp=new Node( data);
+     if(pos==1){
+             temp.next=head;
+             head=temp;
+         }
+         else{
+             Node q=head;
+            for(int i=1;i<pos-1;i++){
+                q=q.next;
+            }
+             temp.next=q.next;
+             q.next=temp;
+             if(temp.next==null){
+                 tail=temp;
+             }
+            
+         }
+         size++;
+            }
+        
+    public void disp(){
+       Node temp=head;
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp=temp.next;
+        }
+    }
+    public static void main(String args[]){
+        Linkedlist l=new Linkedlist();
+        l.beg(7);
+        l.beg(6);
+       l.beg(4);
+       l.beg(3);
+        l.beg(1);
+       l.anypos(2,2);
+       l.anypos(5,5);
+       l.anypos(8,8);
+       l.disp();
+    }
+}
