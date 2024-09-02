@@ -1,0 +1,137 @@
+public class DoubleLL{
+
+    private class Node{
+        int data;
+        Node next;
+        Node prev;
+        public  Node(int data){
+            this.data=data;
+            this.prev=null;
+            this.next=null;
+           
+        }
+    }
+    Node head=null;
+    Node tail=null;
+    int size=0;
+    public void beg(int data){
+        Node temp=new Node(data);
+        if(head==null){
+            head=tail=temp;
+            tail.next=null;
+        }
+        else{
+            temp.next=head;
+            head.prev=temp;
+           head=temp;
+        }
+        size++;
+    }
+    public void end(int data){
+        Node temp=new Node(data);
+        if(head==null){
+            head=tail=temp;
+            tail.next=null;
+        }
+        else{
+            tail.next=temp;
+            temp.prev=tail;
+            temp=tail;
+        }
+        size++;
+    }
+    public void anypos(int data, int pos) {
+        if (pos< 1 || pos> size + 1) {
+            System.out.println("Invalid");
+           
+        }
+        Node temp =new Node(data);
+        if (pos==1) {
+            beg(data);
+        }
+        if (pos== size+1) {
+            end(data);
+        }
+        Node q=head;
+        for (int i = 1; i < pos - 1; i++) {
+            q = q.next;
+        }
+        temp.next = q.next;
+        q.prev = q;
+
+        if (q.next != null) {
+            q.next.prev = temp;
+        }
+        q.next = temp;
+
+        size++;
+    }
+    public void delbeg(){
+        if(head==null){
+            System.out.println("Empty");
+        }
+        else{
+            Node q=head;
+            head=head.next;
+            System.out.println("deleted element is:"+q.data);
+            q=null;
+        }
+    }
+    public void delend(){
+        if(head==null){
+            System.out.println("Empty");
+        }
+        else{
+            Node q=head;
+            Node t=q.next;
+            while(t.next!=null){
+                q=q.next;
+                t=q.next;
+            }
+            t=q.next;
+            q.next=null;
+            System.out.println("deleted element is:"+t.data);
+            t=null;
+        }
+    }
+    public void delanypos(int pos){
+        if (pos< 1 || pos> size + 1) {
+            System.out.println("Invalid");
+           
+        }
+        else{
+            Node q=head;
+            Node t=q.next;
+            for(int i=1;i<pos-1;i++){
+                q=q.next;
+                t=q.next;
+            }
+            t=q.next;
+            q.next=t.next;
+            t.next.prev=q;
+            System.out.println("deleted element is:"+t.data);
+            t=null;
+        }
+    }
+    public void disp(){
+        Node q=head;
+        while(q!=null){
+            System.out.println(q.data);
+            q=q.next;
+        }
+    }
+    public static void main(String args[])
+        {
+               DoubleLL ll=new DoubleLL();
+               ll.beg(1);
+               ll.beg(2);
+               ll.beg(3);
+               ll.beg(4);
+               ll.end(5);
+               ll.anypos(51,2);
+               ll.end(98);
+              ll.delanypos(5);
+               ll.disp();
+        }
+    }
+
