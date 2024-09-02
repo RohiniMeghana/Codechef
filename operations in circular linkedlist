@@ -1,0 +1,139 @@
+public class CicularLL{
+
+    private class Node{
+        int data;
+        Node next;
+        public  Node(int data){
+            this.data=data;
+           
+        }
+    }
+    Node head=null;
+    Node tail=null;
+    int size=0;
+    public void beg(int data){
+        Node temp=new Node(data);
+        if(head==null){
+            head=tail=temp;
+            temp.next=head;
+        }
+        else{
+            Node q=head;
+            temp.next=q;
+            head=temp;
+            tail.next=head;
+            
+        }
+        size++;
+    }
+    public void end(int data){
+        Node temp=new Node(data);
+        if(head==null){
+            head=tail=temp;
+           temp.next=head;
+        }
+        else{
+            tail.next=temp;
+            tail=temp;
+            tail.next=head;
+        }
+        size++;
+    }
+    public void anypos(int data,int pos){
+        if(pos<1 || pos>size+1){
+            System.out.println("Inavlid");
+        }
+        Node temp=new Node(data);
+        if(pos==1){
+            if (head == null) {
+            head = temp;
+            tail = temp;
+            temp.next = head;
+            return;
+        }else{
+           
+            temp.next=head;
+            head=temp;
+            tail.next=head;
+        }
+        }else{
+            Node q=head;
+            for(int i=1;i<pos-1&&q.next!=head;i++){
+                q=q.next;
+            }
+             temp.next=q.next;
+            q.next=temp;
+           
+        }
+    }
+        public void delbeg(){
+            if(head==null){
+                System.out.println("Empty");
+            }
+            else{
+                Node q=head;
+                head=q.next;
+                tail.next=head;
+                System.out.println("deleted elemet is:"+q.data);
+                q=null;
+            }
+        }
+         public void delend(){
+            if(head==null){
+                System.out.println("Empty");
+            }
+            else{
+               Node q=head;
+               Node t=q.next;
+               while(t.next!=head){
+                   q=q.next;
+                   t=q.next;
+               }
+               q.next=head;
+               System.out.println("deleted element is:"+t.data);
+               t=null;
+               
+            }
+        }
+        public void delanypos(int pos){
+            if(pos<1 || pos>size+1){
+                System.out.println("not valid");
+            }
+            else{
+               Node q=head;
+               for(int i=1;i<pos-1&&q.next!=head;i++){
+                   q=q.next;
+               }
+               Node t=q.next;
+               q.next=t.next;
+               System.out.println("deleted element is:"+t.data);
+               t=null;
+              
+               
+            }
+        }
+      
+    public void disp(){
+        Node temp=head;
+        do{
+            System.out.println(temp.data);
+            temp=temp.next;
+        }while(temp!=head);{
+             System.out.println();
+        }
+    }
+    
+    public static void main(String args[]){
+        CicularLL ccl=new CicularLL();
+        ccl.end(1);
+        ccl.end(2);
+        ccl.end(3);
+        ccl.end(4);
+        ccl.beg(5);
+        ccl.anypos(10,1);
+        ccl.end(6);
+        ccl.delanypos(7);
+        ccl.disp();
+        
+    }
+}
