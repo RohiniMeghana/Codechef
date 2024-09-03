@@ -1,0 +1,88 @@
+Given a Linked List of M nodes and a number N, find the value at the Nth node from the end of the Linked List. If there is no Nth node from the end, print -1.
+
+Examples:
+
+Input: 1 -> 2 -> 3 -> 4, N = 3
+Output: 2
+Explanation: Node 2 is the third node from the end of the linked list.
+
+Input: 35 -> 15 -> 4 -> 20, N = 4
+Output: 35
+Explanation: Node 35 is the fourth node from the end of the linked list.
+
+
+
+//program
+import java.util.*;
+public class LinkedList{
+    private class Node{
+        int data;
+        Node next;
+        Node prev;
+        public  Node(int data){
+            this.data=data;
+            this.next=null;
+            this.prev=null;
+        }
+    }
+    Node first=null;
+    Node last=null;
+    int size=0;
+    int l=0;
+    public void insert(int data){
+        Node temp=new Node(data);
+        if(first==null){
+            first=last=temp;
+           
+        }
+        else{
+            
+            temp.next=first;
+            first.prev=temp;
+            first=temp;
+    
+        }
+        size++;
+    }
+    public void display(){
+        Node temp=first;
+        if(first==null){
+            System.out.print("empty");
+        }
+        else{
+            while(temp!=null){
+                l++;
+                System.out.println(temp.data);
+                temp=temp.next;
+            }
+    }
+    }
+    public void nthnodefromend(int n){
+        int i=l;
+        Node q=first;
+        while(i>0){
+            if(i==n){
+                System.out.println("nth node is:"+q.data);
+            }
+            else{
+                q=q.next;
+            }
+            i--;
+        }
+        }
+    
+    public static void main(String args[]){
+        LinkedList ll=new LinkedList();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        ll.insert(20);
+        ll.insert(4);
+        ll.insert(15);
+        ll.insert(35);
+         System.out.println("Original Linked List:");
+        ll.display();
+        ll.nthnodefromend(n);
+        
+        
+    }
+}
