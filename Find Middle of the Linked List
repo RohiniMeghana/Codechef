@@ -1,0 +1,79 @@
+Given a singly linked list, the task is to find the middle of the linked list. If the number of nodes are even, then there would be two middle nodes, so return the second middle node.
+
+
+
+//program
+public class LinkedList{
+    private class Node{
+        int data;
+        Node next;
+        public  Node(int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+    Node first=null;
+    Node last=null;
+    int size=0;
+    int l=0;
+    public void insert(int data){
+        Node temp=new Node(data);
+        if(first==null){
+            first=last=temp;
+           
+        }
+        else{
+            
+            temp.next=first;
+            first=temp;
+    
+        }
+        size++;
+    }
+    public void display(){
+        Node temp=first;
+        if(first==null){
+            System.out.print("empty");
+        }
+        else{
+            while(temp!=null){
+                l++;
+                System.out.println(temp.data);
+                temp=temp.next;
+            }
+    }
+    }
+    public void mid(){
+        int m=l/2;
+    
+        if(l%2!=0){
+            while(m>0){
+                first=first.next;
+                m--;
+            }
+            System.out.println("mid element is:"+first.data);
+            }
+            else{
+                while(m+1>1){
+                first=first.next;
+                m--;
+            }
+                 System.out.println("mid element is:"+first.data);
+            }
+        }
+    
+    public static void main(String args[]){
+        LinkedList ll=new LinkedList();
+        ll.insert(1);
+        ll.insert(2);
+        ll.insert(3);
+        ll.insert(4);
+        ll.insert(5);
+        ll.insert(6);
+        ll.insert(7);
+        ll.insert(8);
+        ll.display();
+        ll.mid();
+        
+    }
+}
