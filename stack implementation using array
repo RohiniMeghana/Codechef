@@ -1,0 +1,54 @@
+import java.util.*;
+class Stacks {
+    public  static final int max=100;
+        static int stack[]=new int[100];
+        static int top=0;
+    public static void push(int data){
+        if(top>=max-1){
+            System.out.println("stack overflow");
+        }
+        else{
+            stack[top]=data;
+            top=top+1;
+            System.out.println("pushed element is:"+data);
+        }
+    }
+    public static void pop(){
+        if(top<=0){
+            System.out.println("stack underflow");
+        }
+        else{
+            top=top-1;
+             System.out.println("popped element is:"+stack[top]);
+             
+        }
+    }
+    public static void peek(){
+        if(top<=0){
+            System.out.println("under overflow");
+        }
+        else{
+            System.out.println(stack[top-1]);
+        }
+    }
+    public static void display(){
+        
+        System.out.println("elements present in the stack are:");
+        for(int i=top-1;i>=0;i--){
+            System.out.println(stack[i]);
+        }
+    }
+    public static void main(String[] args) {
+        Stacks s=new Stacks();
+        s.push(35);
+        s.push(40);
+        s.push(60);
+        s.push(95);
+        s.push(87);
+        s.pop();
+        s.pop();
+        s.peek();
+        s.display();
+    }
+    
+}
