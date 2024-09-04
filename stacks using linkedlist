@@ -1,0 +1,63 @@
+class StacksLL {
+    StackNode top;
+    private class StackNode{
+        int data;
+        StackNode next;
+        public StackNode(int data){
+            this.data=data;
+        }
+    }
+    int size=0;
+    public void push(int data){
+       StackNode temp=new StackNode(data);
+               temp.next=top;
+               top=temp;
+               System.out.println("pushed element is:"+data);
+       
+       size++;
+    }
+    public void pop(){
+        if(top==null){
+            System.out.println("stack is empty");
+        }
+        else{
+            int q=top.data;
+            top=top.next;
+            System.out.println("popped element is:"+q);
+        }
+    }
+    public void peek(){
+        if(top==null){
+            System.out.println("stack is empty");
+        }
+        else{
+
+            System.out.println("top element is:"+top.data);
+        }
+    }
+    public void display(){
+        if(top==null){
+            System.out.println("stack is empty");
+        }
+        else{
+            System.out.println("elements in stack:");
+            StackNode q=top;
+            while(q!=null){
+                System.out.println(q.data);
+                q=q.next;
+            }
+        }
+    }
+    public static void main(String args[]){
+        StacksLL ll=new StacksLL();
+        ll.push(35);
+         ll.push(40);
+          ll.push(60);
+           ll.push(95);
+            ll.push(87);
+             ll.pop();
+             ll.pop();
+            ll.peek();
+             ll.display();
+    }
+}
