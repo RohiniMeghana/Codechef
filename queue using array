@@ -1,0 +1,44 @@
+class Queue{
+   static int rear;
+   static int front;
+     static final int max=100;
+    int[] queue=new int[max];
+    public void enqueue(int data){
+        if(front==-1 || rear>=max-1){
+            System.out.println("overflow");
+        }
+        else{
+            queue[rear]=data;
+            rear++;
+            System.out.println("pushed element is:"+data);
+        }
+    }
+    public void dequeue(){
+        if(rear==front || front==-1){
+            System.out.println("underflow");
+        }
+        else{
+            System.out.println("popped element is:"+queue[front]);
+            front++;
+        }
+    }
+    public void disp(){
+        if(rear==front || front==-1){
+            System.out.println("empty");
+        }
+        else{
+            System.out.println("queue elements are:");
+            for(int i=front;i<rear;i++){
+                System.out.println(queue[i]);
+            }
+        }
+    }
+    public static void main(String[] args) {
+      Queue q=new Queue();
+      q.enqueue(1);
+      q.enqueue(2);
+      q.enqueue(3);
+      q.dequeue();
+      q.disp();
+    }
+}
