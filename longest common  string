@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class Strings{
+    
+    public static String longest(String[] s){
+        if(s.length==0||s==null){
+            return "-1";
+        }
+        else{
+            String fir=s[0];
+            String last=s[s.length-1];
+            int mini=Math.min(fir.length(),last.length());
+            int i=0;
+            while(i<mini && fir.charAt(i)==last.charAt(i)){
+                i++;
+            }
+            String com=fir.substring(0,i);
+            if(com.length()==0){
+                return "-1";
+            }else{
+                return com;
+            }
+        }
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        sc.nextLine();
+        String s[]=new String[n];
+        for(int i=0;i<n;i++){
+            s[i]=sc.nextLine();
+        }
+        Arrays.sort(s);
+       
+       System.out.println( longest(s));
+}
+}
